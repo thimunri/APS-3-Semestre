@@ -77,7 +77,7 @@ public class ClienteModel extends Model {
 		
 		try {
 			stm = Model.getConection().createStatement();
-			rs  = stm.executeQuery("SELECT * FROM clientes");
+			rs  = stm.executeQuery("SELECT * FROM CLIENTES");
 			
 		    while(rs.next()){
 		        

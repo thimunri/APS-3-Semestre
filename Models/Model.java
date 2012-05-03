@@ -30,8 +30,10 @@ public class Model {
 			//Tenta carregar o driver para o banco de dados
 			Class.forName("org.hsqldb.jdbcDriver");
 			
-			//Inicia conexão
-			conn = DriverManager.getConnection("jdbc:hsqldb:file:/temp/apsdb", "sa", "");
+			//String path_db = System.getProperty("user.dir" + "DB/apsdb");
+			
+			//Inicia conexao
+			conn = DriverManager.getConnection("jdbc:hsqldb:file:DB/db_aps", "SA", "");
 		}
 		
 		catch(ClassNotFoundException e){
