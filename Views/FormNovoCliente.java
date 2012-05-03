@@ -62,7 +62,7 @@ public class FormNovoCliente extends JFrame{
 		cons.gridx = 0;
 		cons.gridy = 3;
 		cons.anchor = cons.EAST;
-		formPanel.add(new JLabel("Endereço: "), cons);
+		formPanel.add(new JLabel("Endereï¿½o: "), cons);
 		
 		cons.gridx = 1;
 		cons.gridy = 3;
@@ -71,7 +71,7 @@ public class FormNovoCliente extends JFrame{
 		
 		cons.gridx = 2;
 		cons.anchor = cons.EAST;
-		formPanel.add(new JLabel("Número: "), cons);
+		formPanel.add(new JLabel("Nï¿½mero: "), cons);
 		
 		cons.gridx = 3;
 		txtNumero  = new JTextField(5);
@@ -91,10 +91,10 @@ public class FormNovoCliente extends JFrame{
 		formPanel.add(new JLabel("UF:"), cons);
 		
 		cons.gridx = 3;
-		String[] ufs = new String[]{"Acre - AC","Alagoas - AL","Amapá - AP","Amazonas - AM","Bahia  - BA","Ceará - CE","Distrito Federal  - DF",
-		"Espírito Santo - ES","Goiás - GO","Maranhão - MA","Mato Grosso - MT","Mato Grosso do Sul - MS","Minas Gerais - MG","Pará - PA",
-		"Paraíba - PB","Paraná - PR","Pernambuco - PE","Piauí - PI","Rio de Janeiro - RJ","Rio Grande do Norte - RN","Rio Grande do Sul - RS",
-		"Rondônia - RO","Roraima - RR","Santa Catarina - SC","São Paulo - SP","Sergipe - SE","Tocantins - TO"};
+		String[] ufs = new String[]{"Acre - AC","Alagoas - AL","Amapï¿½ - AP","Amazonas - AM","Bahia  - BA","Cearï¿½ - CE","Distrito Federal  - DF",
+		"Espï¿½rito Santo - ES","Goiï¿½s - GO","Maranhï¿½o - MA","Mato Grosso - MT","Mato Grosso do Sul - MS","Minas Gerais - MG","Parï¿½ - PA",
+		"Paraï¿½ba - PB","Paranï¿½ - PR","Pernambuco - PE","Piauï¿½ - PI","Rio de Janeiro - RJ","Rio Grande do Norte - RN","Rio Grande do Sul - RS",
+		"Rondï¿½nia - RO","Roraima - RR","Santa Catarina - SC","Sï¿½o Paulo - SP","Sergipe - SE","Tocantins - TO"};
 		
 		comboUf	=	new JComboBox(ufs);
 		comboUf.setSelectedIndex(24);
@@ -148,7 +148,7 @@ public class FormNovoCliente extends JFrame{
 		
 				
 		
-		formPanel.setBorder(new TitledBorder("Informações Pessoais"));
+		formPanel.setBorder(new TitledBorder("Informaï¿½ï¿½es Pessoais"));
 		
 		JPanel panel = new JPanel(new BorderLayout());
 		
@@ -190,6 +190,8 @@ public class FormNovoCliente extends JFrame{
 		novoCliente.email    	= txtEmail.getText();
 		novoCliente.cpf		 	= txtCpf.getText();
 		novoCliente.telefone 	= txtTelefone.getText();
+		novoCliente.celular		= txtCelular.getText();
+		novoCliente.telRecado	= txtTelRecado.getText();
 		novoCliente.cep 	 	= txtCep.getText();
 		novoCliente.logradouro	= txtEndereco.getText();
 		novoCliente.bairro	 	= txtBairro.getText();

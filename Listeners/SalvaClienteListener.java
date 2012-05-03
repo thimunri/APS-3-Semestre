@@ -17,16 +17,20 @@ public class SalvaClienteListener implements ActionListener {
 				Cliente novoCliente = FormNovoCliente.getCliente();
 				
 				
-				if( novoCliente.email.equals("")){
-					JOptionPane.showMessageDialog(null,"Você precisa informar o nome do cliente","Alerta",JOptionPane.INFORMATION_MESSAGE);
+				if(novoCliente.nome.equals("")){
+					JOptionPane.showMessageDialog(null, "Voce precisa informar o nome do cliente");
+				}
+				
+				else if( novoCliente.email.equals("")){
+					JOptionPane.showMessageDialog(null,"Vocï¿½ precisa informar o email do cliente","Alerta",JOptionPane.INFORMATION_MESSAGE);
 				}
 				
 				else if(novoCliente.cpf.equals("")){
-					JOptionPane.showMessageDialog(null,"Você precisa informar o CPF do cliente","Alerta",JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null,"Vocï¿½ precisa informar o CPF do cliente","Alerta",JOptionPane.INFORMATION_MESSAGE);
 				}
 				
 				else if(modelo_cliente.verifyClienteExists("cpf", novoCliente.cpf) > 0){
-					JOptionPane.showMessageDialog(null,"Este CPF já está cadastrado no sistema","Alerta",JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null,"Este CPF jï¿½ estï¿½ cadastrado no sistema","Alerta",JOptionPane.INFORMATION_MESSAGE);
 				}
 				
 				else { 

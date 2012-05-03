@@ -49,7 +49,7 @@ public class FormClientes extends JFrame {
 		menuPanel.add(btnDelCliente);
 		menuPanel.add(btnEditCliente);
 		
-		String[] colunas = new String[]{"Nome", "Email", "CPF", "Telefone", "Celular", "Telefone Recado"};
+		String[] colunas = new String[]{"Nome", "Email", "CPF", "Telefone", "Celular", "Telefone Recado", "Endereco", "Bairro", "Cidade", "UF","CEP"};
 		
 		modelClientes	= new DefaultTableModel(null,colunas);
 		populaTabela();
@@ -71,7 +71,7 @@ public class FormClientes extends JFrame {
 		ArrayList<Cliente> clientes = model_cliente.getClientes();
 		
 		for(Cliente cliente:clientes){
-			modelClientes.addRow(new String[]{cliente.nome, cliente.email, cliente.cpf, cliente.telefone});
+			modelClientes.addRow(new String[]{cliente.nome, cliente.email, cliente.cpf, cliente.telefone, cliente.celular, cliente.telRecado, cliente.logradouro, cliente.bairro, cliente.cidade, cliente.uf, cliente.cep});
 		}
 		
 	}
