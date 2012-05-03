@@ -9,6 +9,8 @@ import Views.FormClientes;
 import Entidades.Cliente;
 import Models.ClienteModel;
 
+import Util.Cpf;
+
 public class SalvaClienteListener implements ActionListener {
 	
 		public void actionPerformed(ActionEvent e){
@@ -27,6 +29,10 @@ public class SalvaClienteListener implements ActionListener {
 				
 				else if(novoCliente.cpf.equals("")){
 					JOptionPane.showMessageDialog(null,"Voc� precisa informar o CPF do cliente","Alerta",JOptionPane.INFORMATION_MESSAGE);
+				}
+				
+				else if(!Cpf.validaCPF(novoCliente.cpf)){
+					JOptionPane.showMessageDialog(null, "O CPF informado nao é valido!");
 				}
 				
 				else if(modelo_cliente.verifyClienteExists("cpf", novoCliente.cpf) > 0){
