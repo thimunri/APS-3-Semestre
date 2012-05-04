@@ -11,7 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 
 import Entidades.Cliente;
-import Listeners.NovoClienteListener;
+import Listeners.*;
 import Models.ClienteModel;
 
 public class FormClientes extends JFrame {
@@ -44,12 +44,13 @@ public class FormClientes extends JFrame {
 		btnEditCliente	= new JButton("Editar Ciente");
 		
 		btnNovoCliente.addActionListener(new NovoClienteListener());
+		btnDelCliente.addActionListener(new DeletaClienteListener());
 		
 		menuPanel.add(btnNovoCliente);
 		menuPanel.add(btnDelCliente);
 		menuPanel.add(btnEditCliente);
 		
-		String[] colunas = new String[]{"Nome", "Email", "CPF", "Telefone", "Celular", "Telefone Recado", "Endereco", "Bairro", "Cidade", "UF","CEP"};
+		String[] colunas = new String[]{"COD", "Nome", "Email", "CPF", "Telefone", "Celular", "Telefone Recado", "Endereco", "Bairro", "Cidade", "UF","CEP"};
 		
 		modelClientes	= new DefaultTableModel(null,colunas);
 		populaTabela();
@@ -66,14 +67,44 @@ public class FormClientes extends JFrame {
 	
 	
 	private void populaTabela(){
-		
+
+		//Obtem os cliente cadastrados no banco de dados
 		ClienteModel model_cliente = new ClienteModel();
+		
+		//Monta um array de objetos do tipo Cliente
 		ArrayList<Cliente> clientes = model_cliente.getClientes();
 		
 		for(Cliente cliente:clientes){
-			modelClientes.addRow(new String[]{cliente.nome, cliente.email, cliente.cpf, cliente.telefone, cliente.celular, cliente.telRecado, cliente.logradouro, cliente.bairro, cliente.cidade, cliente.uf, cliente.cep});
+			//Adiciona Clientes na tabela do formulario
+			modelClientes.addRow(new String[]{cliente.cod, cliente.nome, cliente.email, cliente.cpf, cliente.telefone, cliente.celular, cliente.telRecado, cliente.logradouro, cliente.bairro, cliente.cidade, cliente.uf, cliente.cep});
 		}
 		
 	}
+	
+	
+	public static void removeLinha(int linha){
+		modelClientes.removeRow(linha);
+	}
+	
+	
+	
+	public static int getSelectedCliente(){
+		return table.getSelectedRow();
+	}
+	
+	public static String getCod(int linha){
+		return (String) modelClientes.getValueAt(linha, 0);
+	}
+	
+	public static String getCPF(int linha){
+		String cpf = (String) modelClientes.getValueAt(linha, 3);
+		return cpf;
+	}
+	
+	
+	public static String getNome(int linha){
+		return (String) modelClientes.getValueAt(linha, 1);
+	}
+	
 	
 }

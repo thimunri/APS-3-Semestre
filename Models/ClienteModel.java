@@ -67,6 +67,23 @@ public class ClienteModel extends Model {
 		}
 	}
 
+	
+	
+	
+	public void removeCliente(String cod){
+		try {
+			stm = Model.getConection().createStatement();
+			rs	= stm.executeQuery("DELETE FROM clientes WHERE id = '"+cod+"' ");
+			
+			stm.execute("SHUTDOWN");
+		}
+		
+		catch(SQLException e){
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	
 	public ArrayList<Cliente> getClientes() {
 
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
@@ -77,18 +94,19 @@ public class ClienteModel extends Model {
 
 			while (rs.next()) {
 
-				Cliente c = new Cliente();
-				c.nome = rs.getString("nome");
-				c.email = rs.getString("email");
-				c.cpf = rs.getString("cpf");
-				c.telefone = rs.getString("telefone");
-				c.celular = rs.getString("celular");
-				c.telRecado = rs.getString("tel_recado");
-				c.logradouro = rs.getString("endereco");
-				c.cidade = rs.getString("cidade");
-				c.bairro = rs.getString("bairro");
-				c.uf = rs.getString("uf");
-				c.cep = rs.getString("cep");
+				Cliente c 		= new Cliente();
+				c.cod			= rs.getString("id");
+				c.nome			= rs.getString("nome");
+				c.email			= rs.getString("email");
+				c.cpf			= rs.getString("cpf");
+				c.telefone		= rs.getString("telefone");
+				c.celular		= rs.getString("celular");
+				c.telRecado 	= rs.getString("tel_recado");
+				c.logradouro 	= rs.getString("endereco");
+				c.cidade 		= rs.getString("cidade");
+				c.bairro 		= rs.getString("bairro");
+				c.uf 			= rs.getString("uf");
+				c.cep 			= rs.getString("cep");
 
 				clientes.add(c);
 			}
