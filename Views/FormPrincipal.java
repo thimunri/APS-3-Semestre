@@ -31,11 +31,11 @@ public class FormPrincipal extends JFrame {
 		menuCarros		=	new JMenu("Carros");
 		
 		subNovoCliente	=	new JMenuItem("Cadastrar novo cliente");
-		subNovoCliente.setIcon(new ImageIcon("C:\\Users\\Thiago\\Downloads\\fatcow-hosting-icons-2000\\16x16\\user_add.png"));
+		subNovoCliente.setIcon(new ImageIcon(getClass().getResource("/resources/icons/user_add_16.png")));
 		subNovoCliente.addActionListener(new NovoClienteListener());
 		
 		subExibeCliente	=	new JMenuItem("Exibir clientes cadastrados");
-		subExibeCliente.setIcon(new ImageIcon("C:\\Users\\Thiago\\Downloads\\fatcow-hosting-icons-2000\\16x16\\user.png"));
+		subExibeCliente.setIcon(new ImageIcon(getClass().getResource("/resources/icons/user_16.png")));
 		subExibeCliente.addActionListener( new ExibeClientesListener());
 		
 		menuClientes.add(subNovoCliente);

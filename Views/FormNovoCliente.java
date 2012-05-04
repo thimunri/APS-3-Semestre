@@ -156,7 +156,7 @@ public class FormNovoCliente extends JFrame{
 		JPanel panelRodape	= new JPanel( new FlowLayout(FlowLayout.RIGHT));
 		
 		JLabel lblTitulo   = new JLabel("Cadastrar Novo Cliente");
-		lblTitulo.setIcon( new ImageIcon("C:\\Users\\Thiago\\Downloads\\fatcow-hosting-icons-2000\\32x32\\user_add.png"));
+		lblTitulo.setIcon( new ImageIcon( getClass().getResource("/resources/icons/user_add_32.png")));
 		lblTitulo.setFont(new Font("Arial Narrow", Font.BOLD, 24));
 		
 		
